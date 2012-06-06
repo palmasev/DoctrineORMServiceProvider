@@ -1,0 +1,23 @@
+{
+    "name": "palma/DoctrineORMServiceProvider",
+    "description": "A Silex DoctrineORM Service provider",
+    "keywords": ["doctrine, orm, silex"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Francisco Javier Palma Moreno",
+            "email": "palmasev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/orm": "2.*",
+    },
+    "require-dev": {
+        "silex/silex": "*",
+    },
+    
+    "autoload": {
+        "psr-0": { "Palma\Silex\Provider\ServiceProvider": "lib/" }
+    }
+}
