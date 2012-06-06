@@ -1,5 +1,5 @@
 <?php
-namespace Palma\Silex\Provider\ServiceProvider;
+namespace Palma\Silex\Provider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;

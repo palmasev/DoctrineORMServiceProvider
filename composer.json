@@ -19,6 +19,6 @@
     },
     
     "autoload": {
-        "psr-0": { "Palma\\Silex\\Provider\\ServiceProvider": "lib/" }
+        "psr-0": { "Palma\\Silex\\Provider": "lib/" }
     }
 }
