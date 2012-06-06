@@ -9,6 +9,8 @@ DoctrineORM is included in composer.json. Silex is not included in composer.json
 Registering
 -----------
 ```php
+<?php
+...
 
 $app->register(new Palma\Silex\Provider\DoctrineORMServiceProvider(), array(
     'doctrine_orm.entities_path'     => __DIR__.'/Entities/',
