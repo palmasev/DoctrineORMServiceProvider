@@ -11,10 +11,10 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "doctrine/orm": "2.*",
+        "doctrine/orm": "2.*"
     },
     "require-dev": {
-        "silex/silex": "*",
+        "silex/silex": "*"
     },
     
     "autoload": {
