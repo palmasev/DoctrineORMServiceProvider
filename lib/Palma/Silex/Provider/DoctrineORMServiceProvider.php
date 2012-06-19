@@ -14,7 +14,7 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
     public function register(Application $app){
         $app['doctrine_orm.configuration'] = $app->share(function($app){
             $configuration = new Configuration();
-            if($app['doctrine_orm.metadata_cache']){
+            if(isset($app['doctrine_orm.metadata_cache'])){
 	            $configuration->setMetadataCacheImpl($app['doctrine_orm.metadata_cache']);
 	        } else {
 	        	$configuration->setMetadataCacheImpl(new ArrayCache());
@@ -22,7 +22,7 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
             $driverImpl = $configuration->newDefaultAnnotationDriver($app['doctrine_orm.entities_path']);
             $configuration->setMetadataDriverImpl($driverImpl);
 
-            if($app['doctrine_orm.query_cache']){
+            if(isset($app['doctrine_orm.query_cache'])){
 	            $configuration->setQueryCacheImpl($app['doctrine_orm.query_cache']);
 	        } else {
 	        	$configuration->setQueryCacheImpl(new ArrayCache());
@@ -30,7 +30,7 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
             $configuration->setProxyDir($app['doctrine_orm.proxies_path']);
             $configuration->setProxyNamespace($app['doctrine_orm.proxies_namespace']);
             $configuration->setAutogenerateProxyClasses(false);
-            if($app['doctrine_orm.autogenerate_proxy_classes']){
+            if(isset($app['doctrine_orm.autogenerate_proxy_classes'])){
                 $configuration->setAutogenerateProxyClasses($app['doctrine_orm.autogenerate_proxy_classes']);
             }
             return $configuration;
