@@ -32,7 +32,9 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
             $configuration->setAutogenerateProxyClasses(false);
             if(isset($app['doctrine_orm.autogenerate_proxy_classes'])){
                 $configuration->setAutogenerateProxyClasses($app['doctrine_orm.autogenerate_proxy_classes']);
-            }
+			} else {
+				$configuration->setAutogenerateProxyClasses(true);
+			}
             return $configuration;
         });
 
