@@ -12,8 +12,9 @@ Parameters
 * **doctrine_orm.proxies_path**: The path to proxies.
 * **doctrine_orm.proxies_namespace**: The proxies namespace.
 * **doctrine_orm.connection_parameters**: Array of Doctrine DBAL connection params. The DBAL configuration is explained in [DBAL configuration](http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html)
-* **doctrine_orm.metadata_cache**: Optional. This param sets the chache implementation to use for caching metadata information. The default value is Doctrine\Common\Cache\ArrayCache. Don't use it for production.
-* **doctrine_orm.query_cache**: Optional. This param sets the chache implementation to use for caching DQL queries. The default value is Doctrine\Common\Cache\ArrayCache. Don't use it for production.
+* **doctrine_orm.metadata_cache**: Optional. This param sets the cache implementation to use for caching metadata information. The default value is Doctrine\Common\Cache\ArrayCache. Don't use it for production.
+* **doctrine_orm.query_cache**: Optional. This param sets the cache implementation to use for caching DQL queries. The default value is Doctrine\Common\Cache\ArrayCache. Don't use it for production.
+* **doctrine_orm.result_cache**: Optional. This param sets the cache implementation to use for caching query results information.
 * **doctrine_orm.autogenerate_proxy_classes**: Sets whether proxy classes should be generated automatically at runtime by Doctrine. If set to FALSE, proxy classes must be generated manually through the doctrine command line task generate-proxies. The strongly recommended value for a production environment is FALSE. The default value is TRUE.
 
 Registering

@@ -26,7 +26,12 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
 	            $configuration->setQueryCacheImpl($app['doctrine_orm.query_cache']);
 	        } else {
 	        	$configuration->setQueryCacheImpl(new ArrayCache());
-	        }
+            }
+
+            if(isset($app['doctrine_orm.result_cache'])){
+                $configuration->setResultCacheImpl($app['doctrine_orm.result_cache']);
+            }
+
             $configuration->setProxyDir($app['doctrine_orm.proxies_path']);
             $configuration->setProxyNamespace($app['doctrine_orm.proxies_namespace']);
             $configuration->setAutogenerateProxyClasses(false);
