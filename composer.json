@@ -1,5 +1,5 @@
 {
-    "name": "palma/DoctrineORMServiceProvider",
+    "name": "palma/doctrine-orm-service-provider",
     "description": "A Silex DoctrineORM Service provider",
     "keywords": ["doctrine", "orm", "silex"],
     "license": "MIT",
