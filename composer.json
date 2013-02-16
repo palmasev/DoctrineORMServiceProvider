@@ -21,5 +21,10 @@
     
     "autoload": {
         "psr-0": { "Palma\\Silex\\Provider": "lib/" }
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
