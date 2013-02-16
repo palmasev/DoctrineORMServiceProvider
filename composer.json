@@ -15,7 +15,7 @@
         "doctrine/orm": ">=2.2,<2.5-dev"
     },
     "require-dev": {
-        "silex/silex": "1.0.*"
+        "silex/silex": "1.0.*@dev"
     },
     
     "autoload": {
