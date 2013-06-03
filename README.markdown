@@ -54,3 +54,5 @@ $app->get('/blog/show/{id}', function ($id) use ($app) {
 });
 
 ```
+
+[![Total Downloads](https://poser.pugx.org/palma/DoctrineORMServiceProvider/d/total.png)](https://packagist.org/packages/palma/DoctrineORMServiceProvider)
