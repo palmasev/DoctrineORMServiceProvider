@@ -49,7 +49,7 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface {
 	        } else {
 	        	$configuration->setMetadataCacheImpl(new ArrayCache());
 	        }
-            $driverImpl = $configuration->newDefaultAnnotationDriver($app['doctrine_orm.entities_path']);
+            $driverImpl = $configuration->newDefaultAnnotationDriver($app['doctrine_orm.entities_path'], boolval($app['doctrine_orm.simple_annotation_reader']));
             $configuration->setMetadataDriverImpl($driverImpl);
 
             if(isset($app['doctrine_orm.query_cache'])){
