@@ -45,16 +45,33 @@ class DoctrineORMServiceProviderTest extends PHPUnit_Framework_TestCase
      */
     private $app;
 
+    /**
+     * @var DoctrineORMServiceProvider
+     */
+    private $provider;
+
+    /**
+     * Bootstrap
+     *
+     * @return void
+     */
     public function setUp()
     {
         parent::setUp();
 
         $this->app = new Application();
+        $this->provider = new DoctrineORMServiceProvider();
     }
 
+    /**
+     * Shutdown
+     *
+     * @return void
+     */
     public function tearDown()
     {
         $this->app = null;
+        $this->provider = null;
 
         parent::tearDown();
     }
@@ -65,7 +82,7 @@ class DoctrineORMServiceProviderTest extends PHPUnit_Framework_TestCase
     public function registerMustBeCreateResources()
     {
         $this->app->register(
-            new DoctrineORMServiceProvider(),
+            $this->provider,
             [
                 'doctrine_orm.entities_path'            => __DIR__,
                 'doctrine_orm.proxies_path'             => __DIR__,
@@ -77,6 +94,73 @@ class DoctrineORMServiceProviderTest extends PHPUnit_Framework_TestCase
                 'doctrine_orm.simple_annotation_reader' => false
             ]
         );
+
+        $this->assertArrayHasKey('doctrine_orm.em', $this->app);
+    }
+
+    /**
+     * @test
+     */
+    public function registerWithoutAnnotationReaderMustBeCreateResources()
+    {
+        $this->app->register(
+            $this->provider,
+            [
+                'doctrine_orm.entities_path'            => __DIR__,
+                'doctrine_orm.proxies_path'             => __DIR__,
+                'doctrine_orm.proxies_namespace'        => 'Proxy',
+                'doctrine_orm.connection_parameters'    => [
+                    'driver' => 'pdo_sqlite',
+                    'memory' => true,
+                ]
+            ]
+        );
+
+        $this->assertArrayHasKey('doctrine_orm.em', $this->app);
+    }
+
+    /**
+     * @test
+     */
+    public function registerWithoutConnectionParametersMustBeCreateResources()
+    {
+        $this->app->register(
+            $this->provider,
+            [
+                'doctrine_orm.entities_path'            => __DIR__,
+                'doctrine_orm.proxies_path'             => __DIR__,
+                'doctrine_orm.proxies_namespace'        => 'Proxy',
+            ]
+        );
+
+        $this->assertArrayHasKey('doctrine_orm.em', $this->app);
+    }
+
+    /**
+     * @test
+     */
+    public function registerWithoutProxiesParametersMustBeCreateResources()
+    {
+        $this->app->register(
+            $this->provider,
+            [
+                'doctrine_orm.entities_path'            => __DIR__,
+                'doctrine_orm.connection_parameters'    => [
+                    'driver' => 'pdo_sqlite',
+                    'memory' => true,
+                ]
+            ]
+        );
+
+        $this->assertArrayHasKey('doctrine_orm.em', $this->app);
+    }
+
+    /**
+     * @test
+     */
+    public function registerWithoutAnyParametersMustBeCreateResources()
+    {
+        $this->app->register($this->provider);
 
         $this->assertArrayHasKey('doctrine_orm.em', $this->app);
     }
