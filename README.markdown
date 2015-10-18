@@ -16,6 +16,7 @@ Parameters
 * **doctrine_orm.query_cache**: Optional. This param sets the cache implementation to use for caching DQL queries. The default value is Doctrine\Common\Cache\ArrayCache. Don't use it for production.
 * **doctrine_orm.result_cache**: Optional. This param sets the cache implementation to use for caching query results information.
 * **doctrine_orm.autogenerate_proxy_classes**: Sets whether proxy classes should be generated automatically at runtime by Doctrine. If set to FALSE, proxy classes must be generated manually through the doctrine command line task generate-proxies. The strongly recommended value for a production environment is FALSE. The default value is TRUE.
+* **doctrine_orm.simple_annotation_reader**: Optional. This annotation reader is intended to be used in projects where you have full-control over all annotations that are available.
 
 Registering
 -----------
@@ -56,3 +57,4 @@ $app->get('/blog/show/{id}', function ($id) use ($app) {
 ```
 
 [![Total Downloads](https://poser.pugx.org/palma/DoctrineORMServiceProvider/d/total.png)](https://packagist.org/packages/palma/DoctrineORMServiceProvider)
+[![Build Status](https://travis-ci.org/mrprompt/DoctrineORMServiceProvider.svg)](https://travis-ci.org/mrprompt/DoctrineORMServiceProvider)
