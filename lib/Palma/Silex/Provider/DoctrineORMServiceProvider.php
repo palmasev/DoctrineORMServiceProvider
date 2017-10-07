@@ -32,8 +32,7 @@
 namespace Palma\Silex\Provider;
 
 use Silex\Application;
-use Pimple\ServiceProviderInterface;
-use Pimple\Container;
+use Silex\ServiceProviderInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
 use Doctrine\DBAL\DriverManager;
@@ -49,9 +48,9 @@ class DoctrineORMServiceProvider implements ServiceProviderInterface
     /**
      * Register ORM on Application
      *
-     * @param Container $app
+     * @param Application $app
      */
-    public function register(Container $app)
+    public function register(Application $app)
     {
         $app['doctrine_orm.configuration'] = $app->share(function ($app) {
             $configuration = new Configuration();

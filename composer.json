@@ -13,10 +13,10 @@
     "require": {
         "php": ">=5.3.3",
         "doctrine/orm": ">=2.2, ~2.5",
-        "silex/silex": "~2.0"
+        "silex/silex": "<2.*"
     },
     "require-dev": {
-        "silex/silex": "~2.0",
+        "silex/silex": "<2.*",
         "phpunit/phpunit": "~4.4.5"
     },
     "autoload": {
@@ -27,7 +27,7 @@
     },
     "extra" : {
         "branch-alias" : {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
