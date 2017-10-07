@@ -31,8 +31,8 @@
  */
 namespace Palma\Silex\Provider;
 
-use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\Application;
+use Pimple\ServiceProviderInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
 use Doctrine\DBAL\DriverManager;
