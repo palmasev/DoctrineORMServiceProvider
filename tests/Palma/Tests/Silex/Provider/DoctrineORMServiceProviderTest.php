@@ -33,7 +33,7 @@ namespace Palma\Tests\Silex\Provider;
 
 use Palma\Silex\Provider\DoctrineORMServiceProvider;
 use PHPUnit_Framework_TestCase;
-use Pimple\Application;
+use Silex\Application;
 
 /**
  * @author Thiago Paes <mrprompt@gmail.com>
