@@ -31,7 +31,7 @@
  */
 namespace Palma\Silex\Provider;
 
-use Pimple\Application;
+use Silex\Application;
 use Pimple\ServiceProviderInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
