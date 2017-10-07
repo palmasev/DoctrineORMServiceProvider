@@ -12,10 +12,11 @@
     "minimun-stability" : "dev",
     "require": {
         "php": ">=5.3.3",
-	    "doctrine/orm": ">=2.2, ~2.5"
+        "doctrine/orm": ">=2.2, ~2.5",
+        "silex/silex": "<2.*"
     },
     "require-dev": {
-        "silex/silex": "1.*",
+        "silex/silex": "<2.*",
         "phpunit/phpunit": "~4.4.5"
     },
     "autoload": {
