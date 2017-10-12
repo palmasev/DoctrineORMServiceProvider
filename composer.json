@@ -12,7 +12,7 @@
     "minimun-stability" : "dev",
     "require": {
         "php": ">=5.3.3",
-        "doctrine/orm": ">=2.2, ~2.5"
+        "doctrine/orm": ">=2.2"
     },
     "require-dev": {
         "silex/silex": "1.*",
